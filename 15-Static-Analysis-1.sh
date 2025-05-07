@@ -10,6 +10,7 @@ if ! ( which cppcheck &> /dev/null ); then
 fi
 
 cppcheck --enable=warning,style,performance,portability \
+    --check-level=exhaustive \
     --error-exitcode=1 \
     "${TEST_DIR}/../"*.{c,h} || test_end 1
 
